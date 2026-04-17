@@ -1,0 +1,205 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* GLASS */
+.form--glass {
+  padding: 20px;
+
+background: linear-gradient(
+  135deg,
+  rgba(255, 255, 255, 0.9),
+  rgba(120, 120, 120, 0.2),
+  rgba(255, 255, 255, 0.85)
+);
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 18px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* inputs */
+.form--glass input,
+.form--glass textarea {
+  padding: 10px 12px;
+ font-family: Arial, Helvetica, sans-serif;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+color: #515151;
+  background: rgb(255, 255, 255);
+
+  outline: none;
+}
+
+.form--glass input:focus,
+.form--glass textarea:focus {
+  border-color: #515151;
+}
+
+/* button */
+.form--glass button {
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid rgba(135, 135, 135, 0.45);
+
+color:white;
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.25);
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+ 
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* TEXTO POR ENCIMA */
+.form--glass button span {
+  position: relative;
+  z-index: 2;
+}
+
+/* BRILLO INTERNO */
+.form--glass button::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+
+
+  opacity: 0.6;
+  transform: rotate(25deg);
+
+  z-index: 0;
+}
+
+/* REFLEJO */
+.form--glass button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 70%
+  );
+
+  transform: translateX(-60%);
+  transition: transform 0.6s ease;
+
+  z-index: 0;
+}
+
+/* HOVER */
+.form--glass button:hover {
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* ANIMACIÓN LUZ (CORREGIDA) */
+.form--glass button:hover::after {
+  transform: translateX(100%);
+}
+
+/* ========================= */
+/* 🔘 CIRCULAR FORM */
+/* ========================= */
+
+.form--circular {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 20px;
+
+  background: linear-gradient(135deg, #ff9ada, #fad0c4);
+  border-radius: 50px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* inputs estilo pill */
+.form--circular input,
+.form--circular textarea {
+padding: 10px 12px;
+ font-family: Arial, Helvetica, sans-serif;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+color: #515151;
+  background: rgb(255, 255, 255);
+
+  outline: none;
+}
+
+/* focus suave */
+.form--circular input:focus,
+.form--circular textarea:focus {
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.4);
+}
+.form--circular button {
+  padding: 10px 16px;
+background-color:whitesmoke;
+  width: 140px;              /* 👈 ancho concreto */
+  align-self: center;        /* 👈 lo centra dentro del form */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border: 1px solid rgba(135, 135, 135, 0.45);
+
+color:rgb(111, 111, 111);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.25);
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+ 
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.form--circular button:hover{
+    transform: translateY(-3px) scale(1.05);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.3);
+
+}

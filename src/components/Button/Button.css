@@ -1,0 +1,373 @@
+.btn {
+  height: 48px;
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  position: relative;
+  overflow: hidden;
+
+  border: none;
+  cursor: pointer;
+
+  border-radius: 12px;
+
+  z-index: 1; /* 👈 importante para glass/floral */
+}
+
+/* texto */
+.btn-text {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap; /* 👈 evita que se rompa */
+    position: relative;
+  z-index: 2;
+}
+
+
+/* icon alignment */
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0; /* 👈 evita que se deforme */
+    display: block;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* hover */
+.btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+/* BASIC */
+.btn--basic {
+  background-color: #e3cdff;
+  color: #374151;
+}
+
+.btn--basic:hover {
+  background-color: #d9c2ff;
+  transform: translateY(-2px);
+}
+
+/* PRIMARY */
+.btn--primary {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: #6d28d9;
+  transform: translateY(-2px);
+}
+
+/* GHOST */
+.btn--ghost {
+  background: #dadada;
+  color: #374151;
+}
+
+.btn--ghost:hover {
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+/* DANGER */
+.btn--danger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.btn--danger:hover {
+  background: #fecaca;
+  transform: translateY(-2px);
+}
+
+/* DISABLED */
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+/*********************************/
+/*DISEÑO CIRCULAR*/
+/* ========================= */
+/* CIRCULAR MINIMAL CLEAN */
+/* ========================= */
+
+.btn--circular {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff9ada, #fad0c4);
+
+  color: white;
+
+  /* 👇 transición suave (como glass) */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+
+  /* 👇 sombra suave (no agresiva) */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ICONO */
+.btn--circular svg {
+  width: 20px;
+  height: 20px;
+
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+  z-index: 2;
+}
+
+/* HOVER suave (NO brusco) */
+.btn--circular:hover {
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* ACTIVE */
+.btn--circular:active {
+  transform: scale(0.96);
+}
+
+/* FOCUS accesible */
+.btn--circular:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.btn--circular.btn--danger {
+    color: #dc2626;
+
+
+}
+
+
+/**********************/
+/* GLASS ULTRA BUTTON */
+.btn--glass {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  /* 💎 base más visible */
+  background: linear-gradient(
+    135deg,
+    rgba(116, 114, 114, 0.65),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  /* ✨ glass real */
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  /* 💡 más profundidad */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.25);
+
+  /* forma ovalada */
+  border-radius: 50% 40% 60% 40% / 40% 60% 40% 60%;
+
+  color: inherit;
+
+  transition: all 0.25s ease;
+}
+
+/* 💥 ICONO MÁS VISIBLE */
+.btn--glass svg {
+  z-index: 2;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+/* 🌟 BRILLO INTERNO (CLAVE DEL EFECTO WOW) */
+.btn--glass::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.9),
+    transparent 60%
+  );
+
+  opacity: 0.6;
+  transform: rotate(25deg);
+}
+
+/* 🔮 REFLEJO DINÁMICO */
+.btn--glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 70%
+  );
+
+  transform: translateX(-60%);
+  transition: transform 0.6s ease;
+}
+
+/* ✨ HOVER EFECTO WOW */
+.btn--glass:hover {
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* 💫 ANIMACIÓN DE LUZ AL HOVER */
+.btn--glass:hover::after {
+  transform: translateX(100%);
+}
+
+/* 🔴 VARIANTE DANGER (CRISTAL ROJO) */
+.btn--glass.btn--danger {
+  color: #dc2626;
+
+
+
+}
+
+/* 🟢 VARIANTE PRIMARY (CRISTAL MORADO) */
+.btn--glass.btn--primary {
+  color: #7c3aed;
+
+
+
+}
+/**********************/
+/* flower BUTTON */
+
+/* 🌸 FLOWER BUTTON */
+.btn--flower {
+  position: relative;
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+color: white;
+  border: none;
+  background: transparent; /* 👈 clave para quitar el cuadrado */
+  padding: 0;
+}
+
+/* SVG como fondo real */
+.flower-bg {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover; /* 👈 evita deformación */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* contenido encima */
+.btn--flower svg,
+.btn--flower .btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* hover sin fondo raro */
+.btn--flower:hover {
+  transform: translateY(-3px) scale(1.05);
+  transition: all 0.25s ease;
+}
+
+/* 🔴 VARIANTE DANGER (CRISTAL ROJO) */
+.btn--flower.btn--danger {
+  color: #dc2626;
+
+}
+
+/* 🟢 VARIANTE PRIMARY (CRISTAL MORADO) */
+.btn--flower.btn--primary {
+  color: #7c3aed;
+
+}
+
+
+
+/* 💫 ANIMACIÓN DE LUZ AL HOVER */
+.btn--flower:hover::after {
+  transform: translateX(100%);
+}´
+/* ========================= */
+/* 🌸 FLOWER OVERRIDE TOTAL */
+/* ========================= */
+
+.btn--flower {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ❌ bloquea cualquier hover global */
+.btn--flower:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: scale(1.08); /* solo el efecto que quieres */
+}
+
+/* ❌ mata efectos heredados de variantes */
+.btn--flower.btn--basic:hover,
+.btn--flower.btn--primary:hover,
+.btn--flower.btn--ghost:hover,
+.btn--flower.btn--danger:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+}

@@ -1,0 +1,129 @@
+/* ========================= */
+/* BASE CARD */
+/* ========================= */
+
+.card {
+  padding: 16px;
+  margin: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 16px;
+
+  transition: all 0.25s ease;
+
+  position: relative;
+  isolation: isolate; /* 🔥 clave: no rompe botones dentro */
+
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.08);
+}
+/* ========================= */
+/* 🧊 GLASS CARD */
+/* ========================= */
+
+.card--glass {
+  padding: 20px;
+
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+color:rgb(92, 91, 91);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(120, 120, 120, 0.2),
+    rgba(255, 255, 255, 0.85)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  border-radius: 20px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+/* hover base */
+.card--glass:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================= */
+/* 💡 BRILLO (IGUAL QUE BUTTON) */
+/* ========================= */
+
+.card--glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 70%
+  );
+
+  transform: translateX(-60%);
+  transition: transform 0.6s ease;
+
+  pointer-events: none;
+}
+
+/* animación del brillo */
+.card--glass:hover::after {
+  transform: translateX(100%);
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.card--glass .card-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* ========================= */
+/* 🌸 CIRCULAR CARD */
+/* ========================= */
+
+.card--circular {
+  background: linear-gradient(135deg, #ff9ada, #fad0c4);
+
+  border-radius: 40px;
+
+  color: whitesmoke;
+  font-weight: bold;
+  
+}
+
+/* hover circular */
+.card--circular:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.card--circular .card-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  cursor: pointer;
+  justify-content: center;
+}
