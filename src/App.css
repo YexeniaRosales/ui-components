@@ -5,7 +5,7 @@
 
   font-family: "Inter", Arial, sans-serif;
 
-  background: linear-gradient(135deg, #fff0f6, #f3f0ff);
+  background: linear-gradient(135deg, #ffffff, #efc5ff);
   color: #2b2b2b;
 
   display: flex;
@@ -16,7 +16,7 @@ h1 {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 30px;
-
+font-family:monospace;
   line-height: 1.2;
 
   background: linear-gradient(90deg, #ff6fa3, #7c3aed);
@@ -33,7 +33,7 @@ h1 {
   background: rgba(241, 201, 255, 0.6);
   color: #444;
 
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
 
   cursor: pointer;
@@ -81,7 +81,7 @@ h1 {
 }
 h2{
     font-size: 26px;
-  font-weight: 600;
+  font-weight: bold;
   margin-top: 58px;
   margin-bottom: 12px;
   color: #444;
@@ -134,6 +134,7 @@ h3 {
 
   transition: all 0.25s ease;
   margin: 20px;
+  max-width: 500px;
 }
 
 .card:hover {

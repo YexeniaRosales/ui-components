@@ -1,9 +1,9 @@
 import "./Card.css";
 
-export default function Card({ variant = "glass", children }) {
+export default function Cards({ variant = "glass", children }) {
   return (
-    <div className={`card card--${variant}`}>
-      <div className="card-content">
+    <div className={`cards cards--${variant}`}>
+      <div className="card-inner">
         {children}
       </div>
     </div>

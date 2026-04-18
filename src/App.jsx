@@ -2,28 +2,20 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
 import Form from "./components/Form/Form";
-import Card from "./components/Card/Card";
+import Cards from "./components/Card/Card";
 
 
 import "./App.css";
 
 function App() {
-  const [open, setOpen] = useState({
-    buttons: false,
-    forms: false,
-    cards: false,
-  });
+const [open, setOpen] = useState(null);
 
-  const toggle = (key) => {
-    setOpen((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
+const toggle = (key) => {
+  setOpen((prev) => (prev === key ? null : key));
+};
 
   return (
     <div className="page">
-
       
       <div className="container">
 
@@ -44,24 +36,24 @@ function App() {
         </button>
 
       </div>
+
         {/* ================= CARDS ================= */}
-        {open.cards && (
+        {open === "cards" && (
           <div className="section">
             <h2>Cards</h2>
             <div className="card">
-<Card variant="glass">
-  <p>Contenido glass</p>
-</Card>
+                <Cards variant="glass">
+                      <p>Contenido glass</p>
+                                    </Cards>
 
-<Card variant="circular">
-  <p>Contenido circular</p>
-</Card>
-
+                <Cards variant="circular">
+                      <p>Contenido circular</p>
+                                  </Cards>
             </div>
           </div>
         )}
         {/* ================= BUTTONS ================= */}
-        {open.buttons && (
+        {open === "buttons" && (
           <div className="section">
 
             <h2>Buttons</h2>
@@ -128,7 +120,7 @@ function App() {
         )}
 
        {/* ================= FORMS ================= */}
-{open.forms && (
+{open === "forms" && (
   <div className="section">
     <h2>Forms</h2>
 <h3>🧊 Glass Form</h3>
