@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "./components/Button/Button";
 import Form from "./components/Form/Form";
 import Cards from "./components/Card/Card";
+import Navbars from "./components/Navbar/Navbar";
 
 
 import "./App.css";
@@ -22,7 +23,7 @@ const toggle = (key) => {
         <h1>Mi UI Components</h1>
 
 {/* NAVBAR */}
-      <div className="navbar">
+      <div className="nav">
         
         <button onClick={() => toggle("cards")}>
           Cards
@@ -33,6 +34,9 @@ const toggle = (key) => {
 
         <button onClick={() => toggle("forms")}>
           Forms
+        </button>
+                <button onClick={() => toggle("navbar")}>
+          Navbars
         </button>
 
       </div>
@@ -131,7 +135,22 @@ const toggle = (key) => {
         <Form variant="circular" />
   </div>
 )}
+{/* ================= NAVBARS ================= */}
+{open === "navbar" && (
+  <div className="section">
+    <h2>Navbars</h2>
 
+    <h3>🧊 Glass Navbar</h3>
+    <div className="card">
+      <Navbars variant="glass" />
+    </div>
+
+    <h3>🌸 Color Navbar</h3>
+    <div className="card">
+      <Navbars variant="circular" />
+    </div>
+  </div>
+)}
 
 
       </div>

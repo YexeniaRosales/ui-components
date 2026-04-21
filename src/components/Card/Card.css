@@ -29,21 +29,30 @@
   overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
 font-weight: bold;
-color:rgb(92, 91, 91);
 
+  /* 💎 base más visible */
   background: linear-gradient(
     135deg,
-    rgba(116, 114, 114, 0.9),
-    rgba(255, 255, 255, 0.2),
-    rgba(116, 114, 114, 0.85)
+    rgba(116, 114, 114, 0.65),
+    rgba(255, 255, 255, 0.15)
   );
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  /* ✨ glass real */
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
 
-  border-radius: 20px;
+  /* 💡 más profundidad */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.25);
+
+
+  color: inherit;
+
+  transition: all 0.25s ease;
 
 box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
   transition: transform 0.25s ease, box-shadow 0.25s ease;

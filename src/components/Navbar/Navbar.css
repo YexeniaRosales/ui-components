@@ -1,0 +1,121 @@
+/* ========================= */
+/* BASE NAVBAR */
+/* ========================= */
+
+.navbar1 {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px 24px;
+
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden; /* 👈 necesario para el brillo */
+
+  isolation: isolate;
+
+  transition: all 0.25s ease;
+}
+
+/* ========================= */
+/* 🧊 GLASS NAVBAR */
+/* ========================= */
+
+.navbar1--glass {
+
+  /* 💎 base más visible */
+  background: linear-gradient(
+    135deg,
+    rgba(116, 114, 114, 0.65),
+    rgba(255, 255, 255, 0.15)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  /* ✨ glass real */
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+  /* 💡 más profundidad */
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.25);
+
+
+
+  color: inherit;
+
+  transition: all 0.25s ease;
+
+}
+
+/* ✨ LIGHT SWEEP */
+.navbar1--glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 45%,
+    transparent 70%
+  );
+
+  transform: translateX(-60%);
+  transition: transform 0.6s ease;
+
+  pointer-events: none;
+}
+
+.navbar1--glass:hover::after {
+  transform: translateX(100%);
+}
+
+/* ========================= */
+/* 🌸 CIRCULAR NAVBAR */
+/* ========================= */
+
+.navbar1--circular {
+  background: linear-gradient(135deg, #ff9ada, #fad0c4);
+
+  border-radius: 40px;
+
+  color: white;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+/* efecto hover suave */
+.navbar1--circular:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ========================= */
+/* BUTTONS DENTRO */
+/* ========================= */
+
+.navbar1 button {
+  background: transparent;
+  border: none;
+
+  color: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  position: relative;
+  z-index: 2; /* 👈 importante para que no lo tape el brillo */
+
+  padding: 8px 12px;
+
+  transition: transform 0.2s ease;
+}
+
+.navbar1 button:hover {
+  transform: translateY(-2px);
+}

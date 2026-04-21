@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;   /* 👈 CENTRA TODO */
 }
+
 /* 💖 Title */
 h1 {
   font-size: 48px;
@@ -24,7 +25,7 @@ font-family:monospace;
   -webkit-text-fill-color: transparent;
 }
 
-.navbar button{
+.nav button{
   padding: 8px 16px;
 
   border: none;
@@ -45,14 +46,14 @@ font-family:monospace;
   margin: 10px;
 }
 /* hover suave */
-.navbar button:hover {
+.nav button:hover {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
 }
 
 /* active (cuando está abierto) */
-.navbar button.active {
+.nav button.active {
   background: linear-gradient(135deg, #ff6fa3, #7c3aed);
   color: white;
 
@@ -60,7 +61,7 @@ font-family:monospace;
 }
 
 /* efecto shine suave */
-.navbar button::after {
+.nav button::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -76,7 +77,7 @@ font-family:monospace;
   transition: transform 0.5s ease;
 }
 
-.navbar button:hover::after {
+.nav button:hover::after {
   transform: translateX(100%);
 }
 h2{
@@ -88,6 +89,9 @@ h2{
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
+  max-width: 800px;
+  height: 40px;
 }
 /* ✨ Section titles */
 h3 {
@@ -104,6 +108,11 @@ h3 {
 /* 🌸 Row container */
 .section {
   margin-bottom: 28px;
+  width: 100%;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 }
 
 .section-title {
